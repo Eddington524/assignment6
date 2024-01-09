@@ -20,6 +20,7 @@
 		DC5802B72B4D3902003A5C52 /* TrendCityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5802B52B4D3902003A5C52 /* TrendCityCollectionViewCell.swift */; };
 		DC5802B82B4D3902003A5C52 /* TrendCityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5802B62B4D3902003A5C52 /* TrendCityCollectionViewCell.xib */; };
 		DC5802BA2B4D394B003A5C52 /* TrendCityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5802B92B4D394B003A5C52 /* TrendCityCollectionViewController.swift */; };
+		DC5802BF2B4D61D3003A5C52 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5802BE2B4D61D3003A5C52 /* TripViewController.swift */; };
 		DC8746472B4C144E007AC702 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC8746462B4C144E007AC702 /* Kingfisher */; };
 		DCF4C15B2B4C081B00994889 /* TravelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */; };
 		DCF4C15F2B4C0A5700994889 /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */; };
@@ -43,6 +44,7 @@
 		DC5802B52B4D3902003A5C52 /* TrendCityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCityCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC5802B62B4D3902003A5C52 /* TrendCityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendCityCollectionViewCell.xib; sourceTree = "<group>"; };
 		DC5802B92B4D394B003A5C52 /* TrendCityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCityCollectionViewController.swift; sourceTree = "<group>"; };
+		DC5802BE2B4D61D3003A5C52 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewController.swift; sourceTree = "<group>"; };
 		DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
 		DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,7 +81,8 @@
 		DC00A8362B48EE1D003A7B10 /* assignment6 */ = {
 			isa = PBXGroup;
 			children = (
-				DC5802B32B4D3817003A5C52 /* solution1 */,
+				DC5802BB2B4D607F003A5C52 /* solution3 */,
+				DC5802B32B4D3817003A5C52 /* solution2 */,
 				DC00A8372B48EE1D003A7B10 /* AppDelegate.swift */,
 				DC00A8392B48EE1D003A7B10 /* SceneDelegate.swift */,
 				DC00A83B2B48EE1D003A7B10 /* ViewController.swift */,
@@ -98,7 +101,7 @@
 			path = assignment6;
 			sourceTree = "<group>";
 		};
-		DC5802B32B4D3817003A5C52 /* solution1 */ = {
+		DC5802B32B4D3817003A5C52 /* solution2 */ = {
 			isa = PBXGroup;
 			children = (
 				DC5802B42B4D384C003A5C52 /* CityInfo.swift */,
@@ -106,7 +109,15 @@
 				DC5802B62B4D3902003A5C52 /* TrendCityCollectionViewCell.xib */,
 				DC5802B92B4D394B003A5C52 /* TrendCityCollectionViewController.swift */,
 			);
-			path = solution1;
+			path = solution2;
+			sourceTree = "<group>";
+		};
+		DC5802BB2B4D607F003A5C52 /* solution3 */ = {
+			isa = PBXGroup;
+			children = (
+				DC5802BE2B4D61D3003A5C52 /* TripViewController.swift */,
+			);
+			path = solution3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				DCF4C15B2B4C081B00994889 /* TravelTableViewController.swift in Sources */,
 				DC00A84C2B48FC45003A7B10 /* SecondTableViewController.swift in Sources */,
 				DCF4C1612B4C0B1800994889 /* TravelTableViewCell.swift in Sources */,
+				DC5802BF2B4D61D3003A5C52 /* TripViewController.swift in Sources */,
 				DC00A84E2B4921A3003A7B10 /* ShoppingViewController.swift in Sources */,
 				DC5802BA2B4D394B003A5C52 /* TrendCityCollectionViewController.swift in Sources */,
 				DCF4C15F2B4C0A5700994889 /* MagazineInfo.swift in Sources */,
