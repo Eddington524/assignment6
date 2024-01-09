@@ -16,6 +16,10 @@
 		DC00A84C2B48FC45003A7B10 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00A84B2B48FC45003A7B10 /* SecondTableViewController.swift */; };
 		DC00A84E2B4921A3003A7B10 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00A84D2B4921A3003A7B10 /* ShoppingViewController.swift */; };
 		DC00A8502B4927A8003A7B10 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00A84F2B4927A8003A7B10 /* ShoppingTableViewCell.swift */; };
+		DC8746472B4C144E007AC702 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC8746462B4C144E007AC702 /* Kingfisher */; };
+		DCF4C15B2B4C081B00994889 /* TravelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */; };
+		DCF4C15F2B4C0A5700994889 /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */; };
+		DCF4C1612B4C0B1800994889 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,9 @@
 		DC00A84B2B48FC45003A7B10 /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		DC00A84D2B4921A3003A7B10 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		DC00A84F2B4927A8003A7B10 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewController.swift; sourceTree = "<group>"; };
+		DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
+		DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8746472B4C144E007AC702 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +75,9 @@
 				DC00A83B2B48EE1D003A7B10 /* ViewController.swift */,
 				DC00A84B2B48FC45003A7B10 /* SecondTableViewController.swift */,
 				DC00A83D2B48EE1D003A7B10 /* Main.storyboard */,
+				DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */,
+				DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */,
+				DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */,
 				DC00A84D2B4921A3003A7B10 /* ShoppingViewController.swift */,
 				DC00A84F2B4927A8003A7B10 /* ShoppingTableViewCell.swift */,
 				DC00A8402B48EE1F003A7B10 /* Assets.xcassets */,
@@ -92,6 +103,9 @@
 			dependencies = (
 			);
 			name = assignment6;
+			packageProductDependencies = (
+				DC8746462B4C144E007AC702 /* Kingfisher */,
+			);
 			productName = assignment6;
 			productReference = DC00A8342B48EE1D003A7B10 /* assignment6.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +134,9 @@
 				Base,
 			);
 			mainGroup = DC00A82B2B48EE1D003A7B10;
+			packageReferences = (
+				DC8746452B4C144E007AC702 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = DC00A8352B48EE1D003A7B10 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,8 +166,11 @@
 			files = (
 				DC00A83C2B48EE1D003A7B10 /* ViewController.swift in Sources */,
 				DC00A8502B4927A8003A7B10 /* ShoppingTableViewCell.swift in Sources */,
+				DCF4C15B2B4C081B00994889 /* TravelTableViewController.swift in Sources */,
 				DC00A84C2B48FC45003A7B10 /* SecondTableViewController.swift in Sources */,
+				DCF4C1612B4C0B1800994889 /* TravelTableViewCell.swift in Sources */,
 				DC00A84E2B4921A3003A7B10 /* ShoppingViewController.swift in Sources */,
+				DCF4C15F2B4C0A5700994889 /* MagazineInfo.swift in Sources */,
 				DC00A8382B48EE1D003A7B10 /* AppDelegate.swift in Sources */,
 				DC00A83A2B48EE1D003A7B10 /* SceneDelegate.swift in Sources */,
 			);
@@ -381,6 +401,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC8746452B4C144E007AC702 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC8746462B4C144E007AC702 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC8746452B4C144E007AC702 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC00A82C2B48EE1D003A7B10 /* Project object */;
 }
