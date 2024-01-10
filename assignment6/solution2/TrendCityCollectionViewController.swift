@@ -10,7 +10,7 @@ import Kingfisher
 
 let list: [City] = CityInfo().city
 
-class TrendCityCollectionViewController: UICollectionViewController {
+class TrendCityCollectionViewController: UICollectionViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,31 +19,8 @@ class TrendCityCollectionViewController: UICollectionViewController {
         let xib = UINib(nibName: "TrendCityCollectionViewCell", bundle: nil)
         
         collectionView.register(xib, forCellWithReuseIdentifier: "TrendCityCollectionViewCell")
-// 2. 레이아웃
-        let layout = UICollectionViewFlowLayout()
-        
-        let spacing: CGFloat = 20
-        
-        let cellWidth = (UIScreen.main.bounds.width - (spacing * 3))/2
-        
-        
-        //1) 셀크기
-        let cellHeight = cellWidth + 80
-        
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        
-        //2) sectionInset
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        
-        //3) minimumLineSpacing
-        layout.minimumLineSpacing = spacing
-        
-        //4) minimumInteritItemSpacing
-        layout.minimumInteritemSpacing = spacing
-        
-        //5) 스크롤 방향
-//        layout.scrollDirection = .vertical
-        
+// 2. 레이아웃 - extension으로
+       let layout = designLayout()
         //6) 콜렉션뷰 레이아웃 삽입
         collectionView.collectionViewLayout = layout
         
@@ -72,4 +49,39 @@ class TrendCityCollectionViewController: UICollectionViewController {
         return cell
     }
 
+}
+
+extension TrendCityCollectionViewController: UIConfigureProtocol{
+    var id: String {
+        get {
+            "TrendCityCollectionViewCell"
+        }
+        set {
+            
+        }
+    }
+    
+    func designLayout() -> UICollectionViewFlowLayout {
+        
+        let layout = UICollectionViewFlowLayout()
+        let spacing: CGFloat = 20
+        let cellWidth = (UIScreen.main.bounds.width - (spacing * 3))/2
+        
+        //1) 셀크기
+        let cellHeight = cellWidth + 80
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        
+        //2) sectionInset
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        //3) minimumLineSpacing
+        layout.minimumLineSpacing = spacing
+        //4) minimumInteritItemSpacing
+        layout.minimumInteritemSpacing = spacing
+        
+        //5) 스크롤 방향
+//        layout.scrollDirection = .vertical
+        
+        return layout
+    }
+    
 }

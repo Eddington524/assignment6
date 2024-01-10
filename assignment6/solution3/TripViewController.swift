@@ -43,15 +43,7 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
         tripCollectionView.delegate = self
         
         //4. layout
-        let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 20
-        let cellWidth = (UIScreen.main.bounds.width - (spacing * 3))/2
-        let cellHeight = cellWidth + 80
-        
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-        
+        let layout = designLayout()
         tripCollectionView.collectionViewLayout = layout
     }
     
@@ -61,7 +53,7 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrendCityCollectionViewCell", for: indexPath) as! TrendCityCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! TrendCityCollectionViewCell
         
         
         //cell, idxitem,
@@ -84,7 +76,6 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let idx = sender.selectedSegmentIndex
       
-        
         let selectedDomenestic = userSelect.국내.rawValue
         let selectedOverseas = userSelect.해외.rawValue
         
@@ -104,3 +95,25 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 }
 
+extension TripViewController: UIConfigureProtocol{
+    var id: String {
+        get {
+            "TrendCityCollectionViewCell"
+        }
+        set {
+            
+        }
+    }
+     
+     func designLayout() -> UICollectionViewFlowLayout{
+         let layout = UICollectionViewFlowLayout()
+         let spacing: CGFloat = 20
+         let cellWidth = (UIScreen.main.bounds.width - (spacing * 3))/2
+         let cellHeight = cellWidth + 80
+         
+         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+         layout.minimumLineSpacing = spacing
+         layout.minimumInteritemSpacing = spacing
+         return layout
+     }
+}

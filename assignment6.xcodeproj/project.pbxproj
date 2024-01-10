@@ -25,6 +25,7 @@
 		DCF4C15B2B4C081B00994889 /* TravelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */; };
 		DCF4C15F2B4C0A5700994889 /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */; };
 		DCF4C1612B4C0B1800994889 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */; };
+		DCFA7C102B4EEDCB00962E83 /* UIConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7C0F2B4EEDCB00962E83 /* UIConfigureProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewController.swift; sourceTree = "<group>"; };
 		DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
 		DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
+		DCFA7C0F2B4EEDCB00962E83 /* UIConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigureProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		DCFA7C0C2B4E855F00962E83 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
+				DCFA7C0F2B4EEDCB00962E83 /* UIConfigureProtocol.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFA7C102B4EEDCB00962E83 /* UIConfigureProtocol.swift in Sources */,
 				DC00A83C2B48EE1D003A7B10 /* ViewController.swift in Sources */,
 				DC00A8502B4927A8003A7B10 /* ShoppingTableViewCell.swift in Sources */,
 				DC5802B22B4D373E003A5C52 /* CityInfo.swift in Sources */,
