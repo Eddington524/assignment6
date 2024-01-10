@@ -81,6 +81,7 @@
 		DC00A8362B48EE1D003A7B10 /* assignment6 */ = {
 			isa = PBXGroup;
 			children = (
+				DCFA7C0C2B4E855F00962E83 /* protocol */,
 				DC5802BB2B4D607F003A5C52 /* solution3 */,
 				DC5802B32B4D3817003A5C52 /* solution2 */,
 				DC00A8372B48EE1D003A7B10 /* AppDelegate.swift */,
@@ -118,6 +119,13 @@
 				DC5802BE2B4D61D3003A5C52 /* TripViewController.swift */,
 			);
 			path = solution3;
+			sourceTree = "<group>";
+		};
+		DCFA7C0C2B4E855F00962E83 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

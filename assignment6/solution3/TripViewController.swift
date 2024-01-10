@@ -7,33 +7,32 @@
 
 import UIKit
 
-//var domestics: [City] = []
-//var overseas: [City] = []
+var domestics: [City] = []
+var overseas: [City] = []
 var newList: [City] = []
 
-
-enum userSelect: String, CaseIterable {
-    case all = "모두"
-    case dome = "국내"
-    case 헤외 = "해외"
+enum userSelect: Int, CaseIterable {
+    case 모두
+    case 국내
+    case 해외
 }
 
-let selects = userSelect.allCases
+let selects = userSelect.allCases.enumerated()
 
-
-class TripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
-   
+class TripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+    
     //1. 아울렛으로 만든 콜렉션 뷰 연결
     @IBOutlet var tripCollectionView: UICollectionView!
     @IBOutlet var citySegment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//        citySegment.setTitle(selects[0].rawValue, forSegmentAt: 0)
-//        citySegment.setTitle(selects[1].rawValue, forSegmentAt: 1)
-//        citySegment.setTitle(selects[2].rawValue, forSegmentAt: 2)
-//        
+        newList = list
+        
+        for item in list{
+            item.domestic_travel ? domestics.append(item) : overseas.append(item)
+        }
+        
         let xib = UINib(nibName: "TrendCityCollectionViewCell", bundle: nil)
         
         //2. register
@@ -42,13 +41,11 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //3. self로 연결
         tripCollectionView.dataSource = self
         tripCollectionView.delegate = self
-     
+        
         //4. layout
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 20
         let cellWidth = (UIScreen.main.bounds.width - (spacing * 3))/2
-        
-        //1) 셀크기
         let cellHeight = cellWidth + 80
         
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
@@ -59,17 +56,18 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
+        return newList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrendCityCollectionViewCell", for: indexPath) as! TrendCityCollectionViewCell
         
-        let idxItem = list[indexPath.item]
-        cell.subtitleLabel.text = idxItem.city_explain
         
-        let url = URL(string: list[indexPath.item].city_image)!
+        //cell, idxitem,
+        let idxItem = newList[indexPath.item]
+        
+        let url = URL(string: idxItem.city_image)!
         
         cell.imageView.kf.setImage(with: url)
         
@@ -77,18 +75,32 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         cell.subtitleLabel.text = idxItem.city_explain
         
-        if list[indexPath.item].domestic_travel {
-            
-        }
         return cell
     }
-
-   
+    
+    
     
     @IBAction func segment(_ sender: UISegmentedControl) {
+        
         let idx = sender.selectedSegmentIndex
-      print(idx)
+      
+        
+        let selectedDomenestic = userSelect.국내.rawValue
+        let selectedOverseas = userSelect.해외.rawValue
+        
+        switch idx {
+            // idx 1일때 list domenestic = true -> nweList 를 필터링된 배열
+        case selectedDomenestic:
+            newList = domestics
+            //idx 2일때 list domenestic = false -> nweList 를 필터링된 배열
+        case selectedOverseas:
+            newList = overseas
+        default:
+            //전체 list idx 0일때
+            newList = list
         }
-    
+        tripCollectionView.reloadData()
+    }
     
 }
+
