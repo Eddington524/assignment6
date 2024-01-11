@@ -19,7 +19,7 @@ enum userSelect: Int, CaseIterable {
 
 let selects = userSelect.allCases.enumerated()
 
-class TripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class TripViewController: UIViewController{
     
     //1. 아울렛으로 만든 콜렉션 뷰 연결
     @IBOutlet var tripCollectionView: UICollectionView!
@@ -33,45 +33,13 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
             item.domestic_travel ? domestics.append(item) : overseas.append(item)
         }
         
-        let xib = UINib(nibName: "TrendCityCollectionViewCell", bundle: nil)
+        configureCollectionView()
         
-        //2. register
-        tripCollectionView.register(xib, forCellWithReuseIdentifier: "TrendCityCollectionViewCell")
-        
-        //3. self로 연결
-        tripCollectionView.dataSource = self
-        tripCollectionView.delegate = self
-        
-        //4. layout
         let layout = designLayout()
         tripCollectionView.collectionViewLayout = layout
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! TrendCityCollectionViewCell
-        
-        
-        //cell, idxitem,
-        let idxItem = newList[indexPath.item]
-        
-        let url = URL(string: idxItem.city_image)!
-        
-        cell.imageView.kf.setImage(with: url)
-        
-        cell.titleLabel.text =  "\(idxItem.city_name)| \(idxItem.city_english_name)"
-        
-        cell.subtitleLabel.text = idxItem.city_explain
-        
-        return cell
-    }
-    
-    
-    
+   
     @IBAction func segment(_ sender: UISegmentedControl) {
         
         let idx = sender.selectedSegmentIndex
@@ -95,6 +63,21 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 }
 
+extension TripViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func configureCollectionView() {
+        //3. self로 연결
+        tripCollectionView.dataSource = self
+        tripCollectionView.delegate = self
+        
+        let xib = UINib(nibName: TrendCityCollectionViewCell.identifier, bundle: nil)
+        
+        //2. register
+        tripCollectionView.register(xib, forCellWithReuseIdentifier: TrendCityCollectionViewCell.identifier)
+        
+    }
+}
+
 extension TripViewController: UIConfigureProtocol{
     var id: String {
         get {
@@ -116,4 +99,29 @@ extension TripViewController: UIConfigureProtocol{
          layout.minimumInteritemSpacing = spacing
          return layout
      }
+}
+
+extension TripViewController {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return newList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! TrendCityCollectionViewCell
+        
+        
+        //cell, idxitem,
+        let idxItem = newList[indexPath.item]
+        
+        let url = URL(string: idxItem.city_image)!
+        
+        cell.imageView.kf.setImage(with: url)
+        
+        cell.titleLabel.text =  "\(idxItem.city_name)| \(idxItem.city_english_name)"
+        
+        cell.subtitleLabel.text = idxItem.city_explain
+        
+        return cell
+    }
 }
