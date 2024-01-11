@@ -79,14 +79,6 @@ extension TripViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension TripViewController: UIConfigureProtocol{
-    var id: String {
-        get {
-            "TrendCityCollectionViewCell"
-        }
-        set {
-            
-        }
-    }
      
      func designLayout() -> UICollectionViewFlowLayout{
          let layout = UICollectionViewFlowLayout()
@@ -108,7 +100,7 @@ extension TripViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! TrendCityCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrendCityCollectionViewCell", for: indexPath) as! TrendCityCollectionViewCell
         
         
         //cell, idxitem,
@@ -124,4 +116,22 @@ extension TripViewController {
         
         return cell
     }
+    
+    // 관광지 리스트로 화면전환
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //1. 스토리보드 연결
+        let sb = UIStoryboard(name: "CityDetail", bundle: nil)
+       
+        let vc =  sb.instantiateViewController(withIdentifier: "DetailViewController")
+      
+       // root 뷰의 navigation이 있어야함! 스토리보드에서 추가함
+       navigationController?.pushViewController(vc, animated: true)
+       //
+       print("\(indexPath.row)")
+    }
+    
+    
 }
+
+

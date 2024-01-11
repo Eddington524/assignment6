@@ -8,6 +8,6 @@
 import UIKit
 
 protocol UIConfigureProtocol{
-    var id: String { get set }
+
     func designLayout() -> UICollectionViewFlowLayout
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Soi-BM-1XO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIN-Tt-cp3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -560,7 +560,7 @@
             </objects>
             <point key="canvasLocation" x="4240" y="709"/>
         </scene>
-        <!--Trip View Controller-->
+        <!--인기도시-->
         <scene sceneID="Vqj-wn-E1z">
             <objects>
                 <viewController id="Soi-BM-1XO" customClass="TripViewController" customModule="assignment6" customModuleProvider="target" sceneMemberID="viewController">
@@ -589,11 +589,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU4-Og-cn0">
-                                <rect key="frame" x="16" y="59" width="361" height="90"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AU4-Og-cn0">
+                                <rect key="frame" x="16" y="104" width="361" height="54"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zXJ-o2-LZc">
-                                        <rect key="frame" x="16" y="49" width="329" height="32"/>
+                                        <rect key="frame" x="16" y="12" width="329" height="32"/>
                                         <segments>
                                             <segment title="모두"/>
                                             <segment title="국내"/>
@@ -603,22 +603,13 @@
                                             <action selector="segment:" destination="Soi-BM-1XO" eventType="valueChanged" id="dUy-63-M3g"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기도시" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyG-NB-3Cy">
-                                        <rect key="frame" x="151" y="12" width="59" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="zXJ-o2-LZc" secondAttribute="trailing" constant="16" id="Cw0-Nk-HFq"/>
-                                    <constraint firstItem="MyG-NB-3Cy" firstAttribute="top" secondItem="AU4-Og-cn0" secondAttribute="top" constant="12" id="cKu-F5-u24"/>
-                                    <constraint firstAttribute="height" constant="90" id="geF-7g-C7B"/>
+                                    <constraint firstItem="zXJ-o2-LZc" firstAttribute="top" secondItem="AU4-Og-cn0" secondAttribute="top" constant="12" id="N05-Zr-o8F"/>
+                                    <constraint firstAttribute="height" constant="30" id="geF-7g-C7B"/>
                                     <constraint firstItem="zXJ-o2-LZc" firstAttribute="centerX" secondItem="AU4-Og-cn0" secondAttribute="centerX" id="qIO-06-30q"/>
-                                    <constraint firstItem="MyG-NB-3Cy" firstAttribute="centerX" secondItem="AU4-Og-cn0" secondAttribute="centerX" id="tbc-lB-1zP"/>
                                     <constraint firstItem="zXJ-o2-LZc" firstAttribute="leading" secondItem="AU4-Og-cn0" secondAttribute="leading" constant="16" id="w3v-VM-chY"/>
-                                    <constraint firstItem="zXJ-o2-LZc" firstAttribute="top" secondItem="MyG-NB-3Cy" secondAttribute="bottom" constant="16" id="zHz-fB-qAk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -630,8 +621,7 @@
                             <constraint firstItem="mPZ-T9-guX" firstAttribute="trailing" secondItem="AU4-Og-cn0" secondAttribute="trailing" constant="16" id="yQo-Fk-pQP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Zw8-l5-aaE">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="인기도시" id="Zw8-l5-aaE">
                         <view key="titleView" contentMode="scaleToFill" id="O0s-SY-6dc">
                             <rect key="frame" x="196.66666666666666" y="22" width="0.0" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -644,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fpv-4K-AC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4238.9312977099235" y="1427.4647887323945"/>
+            <point key="canvasLocation" x="5165.6488549618316" y="1427.4647887323945"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lsh-sn-m0d">
@@ -681,6 +671,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5D-hv-EUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3314" y="709"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EYA-QN-4Hl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sIN-Tt-cp3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jmz-xW-d68">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Soi-BM-1XO" kind="relationship" relationship="rootViewController" id="9zr-kC-HVB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fby-IM-dUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4238.9312977099235" y="1427.4647887323945"/>
         </scene>
     </scenes>
     <resources>

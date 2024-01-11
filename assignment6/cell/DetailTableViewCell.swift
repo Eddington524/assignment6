@@ -9,15 +9,24 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
+    static let identifier = "DetailTableViewCell"
+    @IBOutlet var spotNameLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
+    
+    @IBOutlet var gradeLabel: UILabel!
+    @IBOutlet var thumnailImageView: UIImageView!
+    @IBOutlet var likeButton: UIButton!
+    @IBOutlet var saveLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        subLabel.numberOfLines = 0
+        subLabel.textColor = .gray
+        subLabel.font = .systemFont(ofSize: 12)
+        thumnailImageView.contentMode = .scaleAspectFill
+        thumnailImageView.clipsToBounds = true
+        thumnailImageView.layer.cornerRadius = 20
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
-    
 }

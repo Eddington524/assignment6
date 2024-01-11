@@ -11,15 +11,20 @@ class AdTableViewCell: UITableViewCell {
     
 static let identifier = "AdTableViewCell"
     
+    @IBOutlet var adView: UIView!
+    @IBOutlet var adLabel: UILabel!
+    @IBOutlet var AdButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        backgroundColor = .clear
+        
+        adView.clipsToBounds = true
+        adView.layer.cornerRadius = 10
+        
+        adLabel.textAlignment = .center
+        adLabel.numberOfLines = 0
     }
     
 }
+

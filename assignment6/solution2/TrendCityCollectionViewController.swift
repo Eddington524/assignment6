@@ -52,14 +52,6 @@ class TrendCityCollectionViewController: UICollectionViewController{
 }
 
 extension TrendCityCollectionViewController: UIConfigureProtocol{
-    var id: String {
-        get {
-            "TrendCityCollectionViewCell"
-        }
-        set {
-            
-        }
-    }
     
     func designLayout() -> UICollectionViewFlowLayout {
         
