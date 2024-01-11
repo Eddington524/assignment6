@@ -8,6 +8,8 @@
 import UIKit
 
 class TrendCityCollectionViewCell: UICollectionViewCell {
+    
+    static let identifier = "MovieTableViewCell"
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
