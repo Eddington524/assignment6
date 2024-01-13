@@ -18,6 +18,8 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var saveLabel: UILabel!
     
+    @IBOutlet var startsImageView: [UIImageView]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         subLabel.numberOfLines = 0
@@ -26,6 +28,9 @@ class DetailTableViewCell: UITableViewCell {
         thumnailImageView.contentMode = .scaleAspectFill
         thumnailImageView.clipsToBounds = true
         thumnailImageView.layer.cornerRadius = 20
+        startsImageView.forEach { el in
+            el.tintColor = .green
+        }
     }
 
 
