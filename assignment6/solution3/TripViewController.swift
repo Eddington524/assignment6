@@ -151,6 +151,11 @@ extension TripViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        let lowSearchText = searchBar.text?.lowercased()
+        
+        let text = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        searchBar.text = text
         var filterData: [City] = []
         
         if segmentIdx != 0 {
@@ -163,7 +168,7 @@ extension TripViewController: UISearchBarDelegate{
             newList = segmentedList
         }else{
             for item in segmentedList {
-                if item.city_name.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!){
+                if item.city_name.contains(text!) || item.lowercase_city_english_name.contains(lowSearchText!) || item.city_explain.contains(text!){
                     
                     filterData.append(item)
                 }
@@ -173,6 +178,13 @@ extension TripViewController: UISearchBarDelegate{
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        let text = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let lowSearchText = searchBar.text?.lowercased()
+        
+        searchBar.text = text
+        
         var filterData: [City] = []
         
         if segmentIdx != 0 {
@@ -185,7 +197,7 @@ extension TripViewController: UISearchBarDelegate{
             newList = segmentedList
         }else{
             for item in segmentedList {
-                if item.city_name.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!){
+                if item.city_name.contains(text!) || item.lowercase_city_english_name.contains(lowSearchText!) || item.city_explain.contains(text!){
                     
                     filterData.append(item)
                 }
