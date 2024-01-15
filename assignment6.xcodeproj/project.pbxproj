@@ -35,6 +35,8 @@
 		DCFA7C662B4FE8BD00962E83 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCFA7C642B4FE8BD00962E83 /* DetailTableViewCell.xib */; };
 		DCFA7C6C2B505F0300962E83 /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7C6B2B505F0300962E83 /* AdViewController.swift */; };
 		DCFA7C6E2B505F2400962E83 /* SpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7C6D2B505F2400962E83 /* SpotViewController.swift */; };
+		DCFA7CBC2B54FD1B00962E83 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7CBB2B54FD1B00962E83 /* WebViewController.swift */; };
+		DCFA7CBE2B54FDC700962E83 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7CBD2B54FDC700962E83 /* ReusableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		DCFA7C642B4FE8BD00962E83 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		DCFA7C6B2B505F0300962E83 /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		DCFA7C6D2B505F2400962E83 /* SpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotViewController.swift; sourceTree = "<group>"; };
+		DCFA7CBB2B54FD1B00962E83 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		DCFA7CBD2B54FDC700962E83 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		DC00A8362B48EE1D003A7B10 /* assignment6 */ = {
 			isa = PBXGroup;
 			children = (
+				DCFA7CBA2B54FCF000962E83 /* day15 */,
 				DCFA7C6A2B505E9200962E83 /* spot */,
 				DCFA7C692B505E8300962E83 /* ad */,
 				DCFA7C5E2B4FE1A700962E83 /* data */,
@@ -114,12 +119,10 @@
 				DC00A83B2B48EE1D003A7B10 /* ViewController.swift */,
 				DC00A84B2B48FC45003A7B10 /* SecondTableViewController.swift */,
 				DC00A83D2B48EE1D003A7B10 /* Main.storyboard */,
-				DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */,
 				DCF4C15A2B4C081B00994889 /* TravelTableViewController.swift */,
 				DCF4C15E2B4C0A5700994889 /* MagazineInfo.swift */,
 				DC00A84D2B4921A3003A7B10 /* ShoppingViewController.swift */,
 				DC5802B12B4D373E003A5C52 /* CityInfo.swift */,
-				DC00A84F2B4927A8003A7B10 /* ShoppingTableViewCell.swift */,
 				DC00A8402B48EE1F003A7B10 /* Assets.xcassets */,
 				DC00A8422B48EE1F003A7B10 /* LaunchScreen.storyboard */,
 				DC00A8452B48EE1F003A7B10 /* Info.plist */,
@@ -150,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				DCFA7C0F2B4EEDCB00962E83 /* UIConfigureProtocol.swift */,
+				DCFA7CBD2B54FDC700962E83 /* ReusableProtocol.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -157,6 +161,8 @@
 		DCFA7C532B4FD6E800962E83 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				DC00A84F2B4927A8003A7B10 /* ShoppingTableViewCell.swift */,
+				DCF4C1602B4C0B1800994889 /* TravelTableViewCell.swift */,
 				DCFA7C542B4FD71B00962E83 /* AdTableViewCell.swift */,
 				DCFA7C552B4FD71B00962E83 /* AdTableViewCell.xib */,
 				DCFA7C632B4FE8BD00962E83 /* DetailTableViewCell.swift */,
@@ -196,6 +202,14 @@
 				DCFA7C6D2B505F2400962E83 /* SpotViewController.swift */,
 			);
 			path = spot;
+			sourceTree = "<group>";
+		};
+		DCFA7CBA2B54FCF000962E83 /* day15 */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA7CBB2B54FD1B00962E83 /* WebViewController.swift */,
+			);
+			path = day15;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +297,9 @@
 				DCFA7C102B4EEDCB00962E83 /* UIConfigureProtocol.swift in Sources */,
 				DC00A83C2B48EE1D003A7B10 /* ViewController.swift in Sources */,
 				DC00A8502B4927A8003A7B10 /* ShoppingTableViewCell.swift in Sources */,
+				DCFA7CBC2B54FD1B00962E83 /* WebViewController.swift in Sources */,
 				DCFA7C602B4FE1F500962E83 /* TravelModel.swift in Sources */,
+				DCFA7CBE2B54FDC700962E83 /* ReusableProtocol.swift in Sources */,
 				DC5802B22B4D373E003A5C52 /* CityInfo.swift in Sources */,
 				DCF4C15B2B4C081B00994889 /* TravelTableViewController.swift in Sources */,
 				DC00A84C2B48FC45003A7B10 /* SecondTableViewController.swift in Sources */,

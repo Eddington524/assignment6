@@ -13,7 +13,7 @@ class TravelTableViewController: UITableViewController {
     @IBOutlet var HeaderView: UIView!
     @IBOutlet var headerTitle: UILabel!
     
-    let list: [Magazine] = MagazineInfo().magazine
+    let list: [Magazine] = MagazineInfo.magazine
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +63,23 @@ class TravelTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        print(list[indexPath.row].link)
+//        
+        print(indexPath.row)
+
+        let vc = storyboard?.instantiateViewController(withIdentifier: WebViewController.identifier) as! WebViewController
+    
+        let nav = UINavigationController(rootViewController: vc)
+ 
+        vc.urlStr = list[indexPath.row].link
+        print(nav)
+        print(vc)
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-let list: [City] = CityInfo().city
+let list: [City] = CityInfo.city
 
 class TrendCityCollectionViewController: UICollectionViewController{
 

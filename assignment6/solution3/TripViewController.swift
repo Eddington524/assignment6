@@ -9,7 +9,6 @@ import UIKit
 
 var domestics: [City] = []
 var overseas: [City] = []
-var newList: [City] = []
 
 enum userSelect: Int, CaseIterable {
     case 모두
@@ -17,19 +16,28 @@ enum userSelect: Int, CaseIterable {
     case 해외
 }
 
-let selects = userSelect.allCases.enumerated()
-
 class TripViewController: UIViewController{
     
     //1. 아울렛으로 만든 콜렉션 뷰 연결
     @IBOutlet var tripCollectionView: UICollectionView!
     @IBOutlet var citySegment: UISegmentedControl!
     
+    @IBOutlet var searchBar: UISearchBar!
+    
+    let originalList:[City] = list
+    var segmentedList: [City] = []
+    var newList: [City] = CityInfo.city {
+        didSet {
+            tripCollectionView.reloadData()
+        }
+    }
+    var segmentIdx = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        newList = list
+        newList = originalList
         
-        for item in list{
+        for item in originalList{
             item.domestic_travel ? domestics.append(item) : overseas.append(item)
         }
         
@@ -37,13 +45,17 @@ class TripViewController: UIViewController{
         
         let layout = designLayout()
         tripCollectionView.collectionViewLayout = layout
+        
+        // 취소버튼 보이게
+        searchBar.showsCancelButton = true
     }
     
-   
+    
     @IBAction func segment(_ sender: UISegmentedControl) {
         
         let idx = sender.selectedSegmentIndex
-      
+        segmentIdx = idx
+        
         let selectedDomenestic = userSelect.국내.rawValue
         let selectedOverseas = userSelect.해외.rawValue
         
@@ -56,9 +68,9 @@ class TripViewController: UIViewController{
             newList = overseas
         default:
             //전체 list idx 0일때
-            newList = list
+            newList = originalList
         }
-        tripCollectionView.reloadData()
+//        tripCollectionView.reloadData()
     }
     
 }
@@ -79,18 +91,18 @@ extension TripViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension TripViewController: UIConfigureProtocol{
-     
-     func designLayout() -> UICollectionViewFlowLayout{
-         let layout = UICollectionViewFlowLayout()
-         let spacing: CGFloat = 20
-         let cellWidth = (UIScreen.main.bounds.width - (spacing * 3))/2
-         let cellHeight = cellWidth + 80
-         
-         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-         layout.minimumLineSpacing = spacing
-         layout.minimumInteritemSpacing = spacing
-         return layout
-     }
+    
+    func designLayout() -> UICollectionViewFlowLayout{
+        let layout = UICollectionViewFlowLayout()
+        let spacing: CGFloat = 20
+        let cellWidth = (UIScreen.main.bounds.width - (spacing * 3))/2
+        let cellHeight = cellWidth + 80
+        
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        return layout
+    }
 }
 
 extension TripViewController {
@@ -118,20 +130,81 @@ extension TripViewController {
     }
     
     // 관광지 리스트로 화면전환
-   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //1. 스토리보드 연결
         let sb = UIStoryboard(name: "CityDetail", bundle: nil)
-       
+        
         let vc =  sb.instantiateViewController(withIdentifier: "DetailViewController")
-      
-       // root 뷰의 navigation이 있어야함! 스토리보드에서 추가함
-       navigationController?.pushViewController(vc, animated: true)
-       //
-       print("\(indexPath.row)")
+        
+        // root 뷰의 navigation이 있어야함! 스토리보드에서 추가함
+        navigationController?.pushViewController(vc, animated: true)
+        //
+        print("\(indexPath.row)")
     }
     
     
 }
 
 
+extension TripViewController: UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        var filterData: [City] = []
+        
+        if segmentIdx != 0 {
+            segmentedList = newList
+        }else{
+            segmentedList = originalList
+        }
+        
+        if searchBar.text == "" {
+            newList = segmentedList
+        }else{
+            for item in segmentedList {
+                if item.city_name.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!){
+                    
+                    filterData.append(item)
+                }
+            }
+            newList = filterData
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        var filterData: [City] = []
+        
+        if segmentIdx != 0 {
+            segmentedList = newList
+        }else{
+            segmentedList = originalList
+        }
+        
+        if searchBar.text == "" {
+            newList = segmentedList
+        }else{
+            for item in segmentedList {
+                if item.city_name.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!){
+                    
+                    filterData.append(item)
+                }
+            }
+            newList = filterData
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        
+        if segmentIdx == 0 {
+            segmentedList = originalList
+        }else if segmentIdx == 1{
+            segmentedList = domestics
+        }else{
+            segmentedList = overseas
+        }
+    
+        newList = segmentedList
+    }
+}
