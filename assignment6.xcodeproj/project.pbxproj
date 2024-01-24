@@ -21,6 +21,7 @@
 		DC5802B82B4D3902003A5C52 /* TrendCityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5802B62B4D3902003A5C52 /* TrendCityCollectionViewCell.xib */; };
 		DC5802BA2B4D394B003A5C52 /* TrendCityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5802B92B4D394B003A5C52 /* TrendCityCollectionViewController.swift */; };
 		DC5802BF2B4D61D3003A5C52 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5802BE2B4D61D3003A5C52 /* TripViewController.swift */; };
+		DC5E01432B615FCF00C29783 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E01422B615FCF00C29783 /* UIViewController + Extension.swift */; };
 		DC8746472B4C144E007AC702 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC8746462B4C144E007AC702 /* Kingfisher */; };
 		DCC6B98E2B552A1D0039A664 /* theaterMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC6B98D2B552A1D0039A664 /* theaterMap.storyboard */; };
 		DCC6B9902B552B4E0039A664 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6B98F2B552B4E0039A664 /* MapViewController.swift */; };
@@ -60,6 +61,7 @@
 		DC5802B62B4D3902003A5C52 /* TrendCityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendCityCollectionViewCell.xib; sourceTree = "<group>"; };
 		DC5802B92B4D394B003A5C52 /* TrendCityCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCityCollectionViewController.swift; sourceTree = "<group>"; };
 		DC5802BE2B4D61D3003A5C52 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		DC5E01422B615FCF00C29783 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		DCC6B98D2B552A1D0039A664 /* theaterMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = theaterMap.storyboard; sourceTree = "<group>"; };
 		DCC6B98F2B552B4E0039A664 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DCC6B9912B552BDA0039A664 /* TheaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterData.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				DCC6B98D2B552A1D0039A664 /* theaterMap.storyboard */,
 				DCC6B98F2B552B4E0039A664 /* MapViewController.swift */,
 				DCC6B9912B552BDA0039A664 /* TheaterData.swift */,
+				DC5E01422B615FCF00C29783 /* UIViewController + Extension.swift */,
 			);
 			path = theatorMap;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				DCC6B9922B552BDA0039A664 /* TheaterData.swift in Sources */,
 				DC00A8502B4927A8003A7B10 /* ShoppingTableViewCell.swift in Sources */,
 				DCFA7CBC2B54FD1B00962E83 /* WebViewController.swift in Sources */,
+				DC5E01432B615FCF00C29783 /* UIViewController + Extension.swift in Sources */,
 				DCFA7C602B4FE1F500962E83 /* TravelModel.swift in Sources */,
 				DCFA7CBE2B54FDC700962E83 /* ReusableProtocol.swift in Sources */,
 				DC5802B22B4D373E003A5C52 /* CityInfo.swift in Sources */,
@@ -486,6 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8VY4M9W7T9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = assignment6/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -499,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sammy.assignment6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sammy.assignment5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -517,6 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8VY4M9W7T9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = assignment6/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -530,7 +536,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sammy.assignment6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sammy.assignment5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

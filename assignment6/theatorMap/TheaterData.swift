@@ -8,7 +8,7 @@ struct Theater {
     let longitude: Double
 }
 
-enum TheaterType: String {
+enum TheaterType: String, CaseIterable {
     case 롯데시네마 = "롯데시네마"
     case 메가박스 = "메가박스"
     case CGV = "CGV"

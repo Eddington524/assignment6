@@ -19,23 +19,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY6-on-l7v">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="680.66666666666663"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbh-Kf-zAC">
+                                <rect key="frame" x="0.0" y="783.66666666666663" width="393" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="locationButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="woG-8N-9f4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Jbh-Kf-zAC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4P7-zq-bMD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Jbh-Kf-zAC" secondAttribute="bottom" id="7ho-c6-XlI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YY6-on-l7v" secondAttribute="trailing" id="Cqz-KQ-Qg3"/>
+                            <constraint firstItem="Jbh-Kf-zAC" firstAttribute="top" secondItem="YY6-on-l7v" secondAttribute="bottom" id="HZ8-BV-Li0"/>
                             <constraint firstItem="YY6-on-l7v" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Lv0-Jf-dTJ"/>
                             <constraint firstItem="YY6-on-l7v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RBt-NG-9Dw"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="YY6-on-l7v" secondAttribute="bottom" id="cOU-c6-3zG"/>
+                            <constraint firstItem="Jbh-Kf-zAC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="w4l-lh-U7c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A63-yz-BE7">
                         <barButtonItem key="rightBarButtonItem" title="filter" id="J2m-3b-6nx"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationButton" destination="Jbh-Kf-zAC" id="2i1-9l-yi6"/>
                         <outlet property="mapView" destination="YY6-on-l7v" id="3jW-NP-L2n"/>
                     </connections>
                 </viewController>
